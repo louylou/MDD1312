@@ -1,0 +1,45 @@
+<!--------- Index file --------->
+<DOCTYPE html>
+
+<html ng-app="AppCore"> <!-- 'ng-' stands for a built in angular directive-->
+
+<head>
+	<title> index page </title>
+
+	<!--FireBase -->
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+
+	<!--model friendly-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--Bootstrap CDN-->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+
+	<!--AngularJS CDN-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js">
+	</script>
+
+	<!--Angular config-->
+	<script src="assets/js/config.js"></script>
+
+	<!--Controllers -->
+	<script src="assets/js/ctrl/core.js"></script>
+
+</head>
+
+<body>
+	<div ng-controller="CtrlCore" class="container"> <!-- calling the function CtrlCore from the View file-->
+	
+	<!-- this is where you filter the ng-repear etc. data-->
+	
+	<!-- but nav-bar info here (login button)-->
+	
+	<h1 class="page-header">{{title}}</h1> <!--put title of pg here-->
+	
+	<div ng-view></div> <!--showing the view code-->
+</body>
+
+</html>
