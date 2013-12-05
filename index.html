@@ -1,24 +1,24 @@
 <!--------- Index file --------->
 <DOCTYPE html>
 
-<html ng-app="AppCore"> <!-- 'ng-' stands for a built in angular directive-->
+<html ng-app="homeyApp"> <!-- 'ng-' stands for a built in angular directive-->
 
 <head>
-	<title> MyDreamJob </title>
-	
-	<!-- my style css-->
-	<link rel="stylesheet" href="assets/css/style.css">
+	<title> Homey </title>
+
 
 	<!--model friendly-->
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--FireBase -->
-	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<!-- 
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+ -->
 
-	
-	<!--bootstrap-->
-	<link href="assets/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link rel="stylesheet" href="assets/css/bootstrap-responsive.min.css">
+	<!--AngularFire-->
+	<!-- 
+<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+ -->
 
 	<!--Bootstrap CDN-->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -29,25 +29,30 @@
 	<!--AngularJS CDN-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js">
 	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js">
+	</script>
 
 	<!--Angular config-->
 	<script src="assets/js/config.js"></script>
 
 	<!--Controllers -->
 	<script src="assets/js/ctrl/core.js"></script>
+	
+	<!-- my style css-->
+	<link rel="stylesheet" href="assets/css/style.css">
 
 </head>
 
 <body>
-	<div ng-controller="CtrlCore" class="container"> <!-- calling the function CtrlCore from the View file-->
+	<div ng-controller="CtrlHome" class="container"> <!-- calling the function CtrlHome from the View file-->
 	
-	<!-- this is where you filter the ng-repear etc. data-->
+	<!-- this is where you filter the ng-repeat etc. data-->
 	
-	<!-- but nav-bar info here (login button)-->
+	<!-- put nav-bar info here (login button)-->
 	
 	<h1 class="page-header">{{title}}</h1> <!--put title of pg here-->
 	
-	<p>Hello worlddddd</p>
+	
 	
 	<div ng-view></div> <!--showing the view code-->
 </body>

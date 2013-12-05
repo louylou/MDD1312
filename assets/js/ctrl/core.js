@@ -1,9 +1,9 @@
 <!-- core.js -->
 
-//core shared controller
-app.controller('CtrlCore', ['$scope', function($scope){ //changed CtrlCore to the name of your app ex: DreamJobApp
+//MydreamJob shared controller
+app.controller('CtrlHome', ['$scope', function($scope){ 
 
-	$scope.title = "MyDreamJob";
+	$scope.title = "Homey";
 
 }]);
 

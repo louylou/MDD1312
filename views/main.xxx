@@ -1,3 +1,9 @@
 <!-- main.xxx -->
 
 <!--put text field here for entering job title and city-->
+
+
+<input ng-model="keywordSearch" />
+
+<div ng-repeat="Pic in PhotoList | filter : "keywordSearch">
+Hi!</div>
