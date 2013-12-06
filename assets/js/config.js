@@ -1,18 +1,21 @@
 <!-- config.js -->
 
-var app = angular.module('homeyApp', ['ngRoute']) //firebase
+var app = angular.module('homeyApp', ['ngRoute']) //, 'firebase'
 .config(['$routeProvider',function(r){
 
 	r
 		.when('/',{
+			controller: 'PhotoList', //idk if items is right?
 			templateUrl : 'views/main.xxx',
 		})
 		.when('/detail/:id', {
 			templateUrl : 'views/detail.xxx',
+			//controller:
 		})
 
 }])
 
+/*
 
 var photoDatabase = 
 {
@@ -70,3 +73,5 @@ $scope.PhotoList.add(
 )
 
 console.log("title", fbDatabase.myDreamJob.JobTitle)
+
+*/

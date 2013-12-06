@@ -1,10 +1,10 @@
-<!--------- Index file --------->
+<!--favorites.html-->
 <DOCTYPE html>
 
 <html data-ng-app="homeyApp"> <!-- 'ng-' stands for a built in angular directive-->
 
 <head>
-	<title> Homey Interior Design </title>
+	<title> Homey Login</title>
 
 
 	<!--model friendly-->
@@ -44,9 +44,7 @@
 </head>
 
 <body>
-	
-	<br/>
-	
+
 	<div class="logoBanner">
 		<a href="index.html"><img src="assets/images/logo.jpg"></a>
 	</div>
@@ -54,30 +52,12 @@
 	  	<a href="login.html">Log In</a> ||
 	  	<a href="favorites.html">Favorites</a>
   	</div>
-
-	<div>
-		<div ng-view></div> <!--showing the view code-->
+  
+	<div class="resultsBg">
+		<p>This page is going to have popular photos people liked most.</p> 
+	</div><!--resultsBg-->	
 		
-	</div>
-	
 		
-	
 		
-	
-	<!--</div>-->
-	
 </body>
-
-
-	<!--
-	<script>
-	angular.module("homeyApp", ["firebase"])
-	.controller("CtrlHome", function($scope, angularFire){
-	var firebaseUrl = "https://homeystyle.firebaseio.com/angular";
-	angularFire(firebaseUrl, $scope, "keywordSearch", "");// the empty "" just means its going to be a string
-	});
-	</script>
-	-->
-	
-
 </html>

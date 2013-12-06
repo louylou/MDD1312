@@ -1,13 +1,63 @@
 /*================ CSS ================ */
 
 body {
+	background-image: url("../images/bg.png");
+	font-family: tahoma, arial-narrow, arial;
+	color: #2e799f;
+}
+
+h1, h2 {
+	color:#dba028;
+}
+
+.logoBanner{
+	background-color: #2e799f;
+	height: 36px;
+}
+
+.resultsBg {
+	background-color: #FFF;
+	padding: 10px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	border-radius: 5px;
+	margin-top: 30px;
+	box-shadow: 2px 2px 2px #b6c0c5;
+}
+
+.pgLinks{
+	background-color: #2e799f;
+	text-align: right;
+	padding: 10px; 
+}
+
+.pgLinks a:link {
+	color: #ffffff;
+}
+.pgLinks a:visited {
+	color: #dba028; 
+	text-decoration: none
+}
+.pgLinks a:hover, a:active {
+	color: #dba028; 
+	text-decoration: none;
+}
+
+.button{
+font-family: tahoma, arial-narrow, arial;
+width: 100px;
+color: #ffffff;
+background-color:#dba028;
+-moz-border-radius: 3px;
+-webkit-border-radius:3px;
+-khtml-border-radius: 3px;
+border-radius: 3px;
+}
+
+.login {
 
 }
 
-h1 {
 
-}
 
-.page-header {
-
-}

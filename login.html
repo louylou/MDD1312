@@ -1,10 +1,9 @@
-<!--------- Index file --------->
 <DOCTYPE html>
 
 <html data-ng-app="homeyApp"> <!-- 'ng-' stands for a built in angular directive-->
 
 <head>
-	<title> Homey Interior Design </title>
+	<title> Homey Login</title>
 
 
 	<!--model friendly-->
@@ -44,9 +43,7 @@
 </head>
 
 <body>
-	
-	<br/>
-	
+
 	<div class="logoBanner">
 		<a href="index.html"><img src="assets/images/logo.jpg"></a>
 	</div>
@@ -54,30 +51,20 @@
 	  	<a href="login.html">Log In</a> ||
 	  	<a href="favorites.html">Favorites</a>
   	</div>
-
-	<div>
-		<div ng-view></div> <!--showing the view code-->
+  
+	<div class="resultsBg">
+		<div class="login">
+			<p>Please Login to your account.</p>
 		
-	</div>
-	
+			<form method="post" action="index.html">
+				<p><input type="text" name="login" value="" placeholder="Username"></p>
+				<p><input type="password" name="password" value="" placeholder="Password"></p>
+				<p class="submit"><input type="submit" name="commit" value="Login"></p>
+			</form>
+		</div><!--login-->
+	</div><!--resultsBg-->	
 		
-	
 		
-	
-	<!--</div>-->
-	
+		
 </body>
-
-
-	<!--
-	<script>
-	angular.module("homeyApp", ["firebase"])
-	.controller("CtrlHome", function($scope, angularFire){
-	var firebaseUrl = "https://homeystyle.firebaseio.com/angular";
-	angularFire(firebaseUrl, $scope, "keywordSearch", "");// the empty "" just means its going to be a string
-	});
-	</script>
-	-->
-	
-
 </html>
