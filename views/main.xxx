@@ -7,18 +7,25 @@
 	<div class="resultsBg">
 			
 			<p>Please type a furniture item. (ex: couch, lamp, table etc.)</P>
-			<input placeholder="item" type="text" ng-model="title"/>
+			<input placeholder="item" type="text" ng-model="keyword"/> <!--added 'search'-->
 		
 			<button data-ng-click="searchPhotos()">Search</button>
 			<br/>
 	
-			<h5 ng-cloak>Item Searched: {{ title }}</h5>
+			<h5 ng-cloak>Item Searched: {{ keyword }}</h5>
 		
 			<h2>Result(s):</h2>
 		
 			<ul>
-				<li data-ng-repeat="photo in keywordSearch | filter:keyword | orderBy: 'title' ">{{ photo.title + ' ' + photo.url  }}</li>
+				<li data-ng-repeat="items in PhotoList | filter: search | orderBy: 'title' ">
+				{{ items.title + ' ' + items.url }}
+				</li>
 			</ul>
+			
+			<br/>
+			<br/>
+		<footer><p>Homey &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
 	</div>
 		
 </div>
+

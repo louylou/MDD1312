@@ -6,10 +6,6 @@
 <head>
 	<title> Homey Interior Design </title>
 
-
-	<!--model friendly-->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
 	<!--FireBase -->
 	<!-- 
 	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
@@ -18,6 +14,11 @@
 	<!--AngularFire--> 
 	<!--<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
 	 -->
+	 
+	 <!-- Firebase + AngularFire -->
+	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+	 
 
 	<!--Bootstrap CDN-->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
@@ -31,12 +32,14 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js">
 	</script>
 
-	<!--Angular config-->
-	
+	<!--local JS-->
 	<script src="assets/js/config.js"></script>
 
 	<!--Controllers -->
 	<script src="assets/js/ctrl/core.js"></script>
+	
+	<!--model friendly-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- my style css--><!--put last just in case I want to override the bootstrap's css-->
 	<link rel="stylesheet" href="assets/css/style.css">
@@ -45,39 +48,54 @@
 
 <body>
 	
-	<br/>
+		<br/>
 	
-	<div class="logoBanner">
-		<a href="index.html"><img src="assets/images/logo.jpg"></a>
-	</div>
-	<div class="pgLinks">
-	  	<a href="login.html">Log In</a> ||
-	  	<a href="favorites.html">Favorites</a>
-  	</div>
+		<div class="logoBanner">
+			<a href="index.html"><img src="assets/images/logo.jpg"></a>
+		</div>
+		<div class="pgLinks">
+			<a href="login.html">Log In</a> ||
+			<a href="member.html">Become a Member</a>
+		</div>
 
-	<div>
+	
+	
 		<div ng-view></div> <!--showing the view code-->
 		
 	</div>
 	
+	
+	<!--NEWLY ADDED CODE:
+	<html ng-app="airline">
+	<head>
+		<script type="text/javascript" src="js/angular-resource.min.js"></script><!--add this file!-->
+		<script type="text/javascript" src="js/ctrl/flights.js"></script>
+		<script type="text/javascript" src="js/ctrl/reservations.js"></script>
+		<script type="text/javascript" src="js/ctrl/airport.js"></script>
+		<script type="text/javascript" src="js/services.js"></script>
 		
+	</head>
+	<body>
+	<div class="container" ng-controller="AppCtrl"> <!--container is a Bootstrap class-->	
 	
+		<ul class="nav nav-pills">
+			<li ng-class="destinationsActive">
+				<a href="#">Destinations</a>
+			</li>
+			<li ng-class="flightsActive">
+				<a href="#/flights">Flights</a>
+			</li>
+			<li ng-class="reservationsActive">
+				<a href="#/reservations">Reservations</a>
+			</li>
+		</ul>
 		
-	
-	<!--</div>-->
-	
-</body>
-
-
-	<!--
-	<script>
-	angular.module("homeyApp", ["firebase"])
-	.controller("CtrlHome", function($scope, angularFire){
-	var firebaseUrl = "https://homeystyle.firebaseio.com/angular";
-	angularFire(firebaseUrl, $scope, "keywordSearch", "");// the empty "" just means its going to be a string
-	});
-	</script>
+		<div ng-view></div>
+		
+	</div>
 	-->
 	
+
+</body>
 
 </html>

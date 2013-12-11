@@ -15,63 +15,39 @@ var app = angular.module('homeyApp', ['ngRoute']) //, 'firebase'
 
 }])
 
-/*
+/* NEWLY ADDED CODE:
+angular.module('airline', ['airlineServices', 'airlineFilters'])
+	.config(airlineRouter);
 
-var photoDatabase = 
-{
-	
-	PhotoList: 	[
-		{
-			title: 	'Couch',
-			url: 	'http://www.exercisemenu.com/wp-content/uploads/2011/07/couch.jpg',
-			keyword: 	[
-				'couch',
-				'sofa',
-				'loveseat',
-				'couches',
-				'living room',
-			]
-		},
-		{
-			title: 	'Lamp',
-			url: 	'http://cubeme.com/blog/wp-content/uploads/2010/04/Wrecking_Ball_Lamp_Studio_Job1.jpg',
-			keyword: 	[
-				'lamp',
-				'cool lamp',
-				'lamps',
-				'artsy lamp',
-			]
-		},
-		{
-			title: 	'Table',
-			url: 	'http://st.houzz.com/simgs/b39120ae0df28bda_4-8092/eclectic-coffee-tables.jpg',
-			keyword: 	[
-				'table',
-				'coffee table',
-				'tables',
-				'low table',
-				'cool table',
-			]
-		},
-	]
+function airlineRouter ($routeProvider) {
+	$routeProvider
+	.when('/', {templateUrl: 'partials/destinations.html',
+	controller: 'DestinationsCtrl'})
+	.when('/airports/:airportCode', {
+	templateUrl: 'partials/airport.html',
+	controller: 'AirportCtrl'
+	})
+	.when('/flights', {
+	templateUrl:'partials/flights.html',
+	controller: 'FlightsCtrl'})
+	.when('/reservations', {templateUrl:'partials/reservations.html',
+	controller: 'ReservationsCtrl'}) //calling the .js file in the js/ctrl folder
+	;
 }
+angular.module('airlineFilters', [])
+.filter('originTitle', function () {
+	return function(input) {
+		return input.origin + ' - ' + input.originFullName;
+	};
+})
+.filter('destinationTitle', function () {
+	return function(input) {
+		return input.destination + ' - ' + input.destinationFullName; //returning the output you want to display
+	};
+});
 
-new firebase('https://homeystyle.firebaseio.com').bind('$scope', 'PhotoList');
-
-$scope.PhotoList = fbDatabase.PhotoList;
-
-$scope.PhotoList.add(
-		{
-			title: 		'',
-			url: 		'',
-			keyword: 	[
-				'',
-				'',
-				'',
-			]
-		}
-)
-
-console.log("title", fbDatabase.myDreamJob.JobTitle)
-
+	
 */
+
+
+

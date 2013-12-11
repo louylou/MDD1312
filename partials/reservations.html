@@ -1,0 +1,41 @@
+<!--NEWLY ADDED CODE
+<h3>Reserve your flight</h3>
+<div class="controls controls-row">
+	<input type="text" class="input-small" placeholder="Origin" ng-model="reserve.origin"/>
+	<input type="text" class="input-small" placeholder="Destination" ng-model="reserve.destination"/>
+</div>
+
+<a href="" class="btn btn-primary" ng-click="reserveFlight()">Reserve</a>
+
+<h3>Your Reservations</h3>
+
+<!--or should it be  ng-show="reservation.length" ??-->
+<table ng-show="reserve.origin" class="table">
+	<thead>
+		<tr>
+			<th>Number</th>
+			<th>Origin</th>
+			<th>Destination</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!--or should it be "flight in reservations" ??-->
+		<tr ng-repeat="flight in flights | filter: reserve "><!--only flights with the matching origin will display-->
+		<td>{{flight.number}}</td>
+		<td>
+			<a ng-href="#/airports/{{flight.origin}}">
+			{{flight | originTitle}}
+			</a>
+		</td>
+		<td>
+			<a ng-href="#/airports/{{flight.destination}}">
+			{{flight | destinationTitle}} <!--these filter titles are created in the config.js file-->
+			</a>
+		</td>
+	</tbody>
+</table>
+
+<div ng-hide="reservations.length" class="alert alert-info">
+	You don't currently have any reservations, why not make one now?
+</div>
+-->
