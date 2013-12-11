@@ -2,35 +2,39 @@
 
 <!--displays on the main page-->
 
-<div class="container">
 
-	<div class="resultsBg">
-			
-			
-			<h4>Welcome!</h4><p>Homey Interior Design Photos! This application is a great way
-			to search and save interior design photos that will both inspire 
-			and spark a great idea for your own home. <b>Enjoy!</b></p>
-			<br/>
-			<p>Please type a furniture item. (ex: couch, lamp, table etc.)</P>
-			<input placeholder="item" type="text" ng-model="keyword"/> <!--added 'search'-->
+
+<div class="resultsBg">
 		
-			<button data-ng-click="searchPhotos()">Search</button>
-			<br/>
+		
+		<h4>Welcome!</h4><p>Homey Interior Design Photos! This application is a great way
+		to search and save interior design photos that will both inspire 
+		and spark a great idea for your own home. <b>Enjoy!</b></p>
+		<br/>
+		<p>Please type a furniture item. (ex: couch, lamp, table etc.)</P>
+		<input placeholder="item" type="text" ng-model="keyword"/> <!--added 'search'-->
 	
-			<h5 ng-cloak>Item Searched: {{ keyword }}</h5>
+		<button data-ng-click="searchPhotos()">Search</button>
+		<br/>
+
+		<h5 ng-cloak>Item Searched: {{ keyword }}</h5>
+	
+		<h2>Result(s):</h2>
+	
+		<ul>
+			<li data-ng-repeat="searchPic in PhotoStorage | filter: search | orderBy: 'title' ">
+			{{ searchPic.title}}
+			<img src="{{ searchPic.url }}"/>
+			</li>
+		</ul>
 		
-			<h2>Result(s):</h2>
-		
-			<ul>
-				<li data-ng-repeat="items in PhotoList | filter: search | orderBy: 'title' ">
-				{{ items.title + ' ' + items.url }}
-				</li>
-			</ul>
-			
-			<br/>
-			<br/>
-		<footer><p>Homey &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
-	</div>
-		
+		<br/>
+		<br/>
+	<footer><p>Homey &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
+	
+	
+	
 </div>
+		
+
 

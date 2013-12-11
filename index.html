@@ -6,18 +6,9 @@
 <head>
 	<title> Homey Interior Design </title>
 
-	<!--FireBase -->
-	<!-- 
-	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
-	--> 
-
-	<!--AngularFire--> 
-	<!--<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
-	 -->
 	 
-	 <!-- Firebase + AngularFire -->
+	 <!-- Firebase-->
 	<script src="https://cdn.firebase.com/v0/firebase.js"></script>
-	<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
 	 
 	 
 	 <!--Simple Firebase login with Facebook-->
@@ -35,6 +26,9 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular-route.min.js">
 	</script>
 
+	<!--AngularFire-->
+	<script src="https://cdn.firebase.com/libs/angularfire/0.5.0-rc1/angularfire.js"></script>
+	
 	<!--local JS-->
 	<script src="assets/js/config.js"></script>
 
@@ -51,7 +45,7 @@
 
 <body>
 	
-		<br/>
+	<div class="container" ng-controller="GlobalCtrl">
 	
 		<div class="logoBanner">
 			<a href="index.html"><img src="assets/images/logo.jpg"></a>
@@ -59,39 +53,19 @@
 		<div class="pgLinks">
 			<a href="login.html">Log In</a> ||
 			<a href="member.html">Become a Member</a>
+			<a ng-href="#/detail"> Add Photos</a>
+			
 		</div>
 
 	
 	
 		<div ng-view></div> <!--showing the view code-->
 		
+		
+		
+		
 	</div>
 	
-	
-	<!--NEWLY ADDED CODE:
-		<script type="text/javascript" src="js/angular-resource.min.js"></script>
-		<script type="text/javascript" src="js/ctrl/flights.js"></script>
-		<script type="text/javascript" src="js/ctrl/reservations.js"></script>
-		<script type="text/javascript" src="js/ctrl/airport.js"></script>
-		<script type="text/javascript" src="js/services.js"></script>		
-	<body>
-	<div class="container" ng-controller="AppCtrl">	
-	
-		<ul class="nav nav-pills">
-			<li ng-class="destinationsActive">
-				<a href="#">Destinations</a>
-			</li>
-			<li ng-class="flightsActive">
-				<a href="#/flights">Flights</a>
-			</li>
-			<li ng-class="reservationsActive">
-				<a href="#/reservations">Reservations</a>
-			</li>
-		</ul>
-		
-		<div ng-view></div>
-		
-	</div>-->
 	
 
 </body>

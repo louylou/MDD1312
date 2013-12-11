@@ -1,5 +1,14 @@
-<!-- details page -->
 
-<h3>Search Results: {{detailID}}</h3>
+<form ng-submit="addPhoto()">
+		<input placeholder="title" type="text" ng-model="photoTitle"/>
+		<input placeholder="url" type="text" ng-model="photoUrl"/>
+		<input type="submit" value="submit"/>
+		
+</form>
 
+<div ng-repeat="Pic in PhotoStorage">
+<img src="{{Pic.url}}" />
+<p>{{Pic.title}}</p>
+
+</div>
 
