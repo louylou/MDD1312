@@ -1,0 +1,22 @@
+
+<div class="resultsBg">	
+		
+		<br/>
+				
+		<!--<input placeholder="item" type="text" ng-model="keyword"/>-->
+		<!--<button data-ng-click="searchPhotos()">Search</button>-->
+		<!--<h5 ng-cloak>Item Searched: {{ keyword }}</h5>-->
+	
+		<h4>All Your Jot-It-Down Lists:</h4>
+	
+		<ul>
+			<li data-ng-repeat="searchTitles in ListStorage"><a href="page to view each list"><!--| filter: search | orderBy: 'title'-->
+			{{searchTitles.title}}
+			</a></li>
+		</ul>
+			
+		<br/>
+		<br/>
+	<footer><p>Homey &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
+		
+</div>

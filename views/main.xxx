@@ -1,32 +1,15 @@
 <!-- main.xxx-->
 
-<!--displays on the main page-->
-
-
+<!--the home page-->
 
 <div class="resultsBg">
 		
 		
-		<h4>Welcome!</h4><p>Homey Interior Design Photos! This application is a great way
-		to search and save interior design photos that will both inspire 
-		and spark a great idea for your own home. <b>Enjoy!</b></p>
-		<br/>
-		<p>Please type a furniture item. (ex: couch, lamp, table etc.)</P>
-		<input placeholder="item" type="text" ng-model="keyword"/> <!--added 'search'-->
-	
-		<button data-ng-click="searchPhotos()">Search</button>
-		<br/>
-
-		<h5 ng-cloak>Item Searched: {{ keyword }}</h5>
-	
-		<h2>Result(s):</h2>
-	
-		<ul>
-			<li data-ng-repeat="searchPic in PhotoStorage | filter: search | orderBy: 'title' ">
-			{{ searchPic.title}}
-			<img src="{{ searchPic.url }}"/>
-			</li>
-		</ul>
+		<h4>Welcome!</h4><p>Jot-It-Down is a great app for writing down your own personal
+		"to-do" lists. Once a <a href="member.html">member</a> you can store all your lists, and view them 
+		individually by their titles. Writing a "to-do" list mentally helps one feel more accomplished 
+		when checking off their everyday or random tasks they have to do. So why not use Jot-It-Down app to go 
+		wherever you go on your quest to attaining your tasks! <b>Enjoy!</b></p>
 		
 		<br/>
 		<br/>

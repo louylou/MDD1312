@@ -10,7 +10,11 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 		})
 		.when('/detail', {
 			templateUrl : 'views/detail.xxx',
-			controller: 'addPhotoCtrl'
+			controller: 'addListCtrl' //addPhotoCtrl
+		})
+		.when('/allLists', {
+		templateUrl: 'allLists.html',
+		controller:  'AllListsCtrl'	
 		})
 
 }])
