@@ -10,9 +10,13 @@ h1, h2 {
 	color:#dba028;
 }
 
+p {
+text-indent: 20px;
+}
+
 .logoBanner{
 	background-color: #2e799f;
-	height: 36px;
+	height: 66px;
 }
 
 .resultsBg {
@@ -28,8 +32,8 @@ h1, h2 {
 
 .pgLinks{
 	background-color: #2e799f;
-	text-align: right;
-	padding: 10px;
+	/*text-align: right;*/
+	padding: 15px 10px 10px 10px;
 	text-decoration: none;
 }
 

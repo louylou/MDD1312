@@ -6,6 +6,11 @@
 
 	<div class="resultsBg">
 			
+			
+			<h4>Welcome!</h4><p>Homey Interior Design Photos! This application is a great way
+			to search and save interior design photos that will both inspire 
+			and spark a great idea for your own home. <b>Enjoy!</b></p>
+			<br/>
 			<p>Please type a furniture item. (ex: couch, lamp, table etc.)</P>
 			<input placeholder="item" type="text" ng-model="keyword"/> <!--added 'search'-->
 		

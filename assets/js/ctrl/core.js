@@ -19,6 +19,7 @@ app.controller('PhotoList', ['$scope', '$routeParams', /*'$firebase'*/, function
         var items = {};
 		items.couches = function($scope) {
 			$scope.keywordSearch=[
+			
 				{
 					"title": 	'couch',
 					"url": 	'http://www.exercisemenu.com/wp-content/uploads/2011/07/couch.jpg',
@@ -89,6 +90,9 @@ app.controller('CtrlDetail', ['$scope', '$routeParams', function($scope, $routeP
 	$scope.detailID = $routeParams.id;
 
 }]);
+
+
+
 
 
 
