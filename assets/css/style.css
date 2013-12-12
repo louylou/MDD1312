@@ -61,8 +61,8 @@ background-color:#dba028;
 border-radius: 3px;
 }
 
-.login {
-
+.eachItem li {
+list-style-type: none;
 }
 
 footer p {

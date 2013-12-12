@@ -3,49 +3,49 @@
 app.controller('GlobalCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
 
         var url = 'https://homeystyle.firebaseio.com'; //link to my firebase account
-        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); //PhotoStorage
+        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
-        $scope.addList = function() {//addPhoto
-        	//console.log("hello");
-        	var newList = {//newPhoto
-        		"title": 	$scope.listTitle, //photoTitle
-				"toDos": 	$scope.createdList //"url"//photoUrl
+        $scope.addList = function() {
+        	
+        	var newList = {
+        		"title": 	$scope.listTitle, 
+				"toDos": 	$scope.createdList 
         	}
-        	$scope.ListStorage.$add(newList); //PhotoStorage//newPhoto
+        	$scope.ListStorage.$add(newList); 
         }
         
 
 }]);
 
-app.controller('addListCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ //addPhotoCtrl
+app.controller('addListCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
 
-        var url = 'https://homeystyle.firebaseio.com'; //link to my firebase account
-        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); //PhotoStorage
+        var url = 'https://homeystyle.firebaseio.com'; 
+        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
-        $scope.addList = function() { //addPhoto
-        	//console.log("hello");
-        	var newList = { //newPhoto
-        		"title": 	$scope.listTitle, //photoTitle
-				"toDos": 	$scope.createdList //"url"//photoUrl
+        $scope.addList = function() { 
+        	
+        	var newList = { 
+        		"title": 	$scope.listTitle, 
+				"toDos": 	$scope.createdList 
         	}
-        	$scope.ListStorage.$add(newList); //PhotoStorage //newPhoto
+        	$scope.ListStorage.$add(newList); 
         }
         
 
 }]);
 
-app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ //addPhotoCtrl
+app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
 
-        var url = 'https://homeystyle.firebaseio.com'; //link to my firebase account
-        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); //PhotoStorage
+        var url = 'https://homeystyle.firebaseio.com'; 
+        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
-        $scope.addList = function() { //addPhoto
-        	//console.log("hello");
-        	var newList = { //newPhoto
-        		"title": 	$scope.listTitle, //photoTitle
-				"toDos": 	$scope.createdList //"url"//photoUrl
+        $scope.addList = function() { 
+
+        	var newList = { 
+        		"title": 	$scope.listTitle, 
+				"toDos": 	$scope.createdList
         	}
-        	$scope.ListStorage.$add(newList); //PhotoStorage //newPhoto
+        	$scope.ListStorage.$add(newList); 
         }
         
 

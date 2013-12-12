@@ -10,13 +10,13 @@
 		<h4>All Your Jot-It-Down Lists:</h4>
 	
 		<ul>
-			<li data-ng-repeat="searchTitles in ListStorage"><a href="page to view each list"><!--| filter: search | orderBy: 'title'-->
+			<li data-ng-repeat="searchTitles in ListStorage"><a ng-href="#/eachList"><!--| filter: search | orderBy: 'title'-->
 			{{searchTitles.title}}
 			</a></li>
 		</ul>
 			
-		<br/>
-		<br/>
-	<footer><p>Homey &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
+	<br/>
+	<br/>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
 		
 </div>

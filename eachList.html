@@ -1,0 +1,18 @@
+<!--this page is each individual list-->
+
+<div class="resultsBg">
+
+	<div ng-repeat="list in ListStorage">
+		
+		<h4>Your '{{list.title}}' List:</h4>
+		
+		<ul class="eachItem">		 
+			<li><input type="checkbox" ng-model="createdList"/> {{list.toDos}}</li>	
+		</ul>
+	</div>
+	<input type="button" value="Completed"/>
+	
+	<br/>
+	<br/>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
+</div>

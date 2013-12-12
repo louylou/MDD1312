@@ -1,37 +1,38 @@
 <!--this is the home page once the user is logged in-->
+<!--This page creates new to do lists and stores them in Firebase-->
 
 <div class="resultsBg">
 
 
 <h4>Creating a List:</h4>
 <p>Create a new Jot-It-Down list here! Create a short yet descriptive title for your newly made list 
-so make it easy to find later among your other lists.</p>
+to make it easy to find later among your other lists.</p>
 <p>Once you finished your list, you can always come back and check off the tasks and click 'Completed' 
 to clear them from your list.</p>
-	<form ng-submit="addList()"><!--addPhoto()-->
+	<form ng-submit="addList()">
 	
 			<input placeholder="Title of your list..." type="text" ng-model="listTitle"/>
-			<!--<input placeholder="title" type="text" ng-model="photoTitle"/>-->
 			<br/>
 			<br/>
-			<input type="checkbox" value="completed"/>
 			<input placeholder="Write your To-Do's here..." type="text" ng-model="createdList"/>
-			<!--<input placeholder="url" type="text" ng-model="photoUrl"/>-->
-			<br/>
+			<br/>	
+			<!--How do I create more input fields and save them all at the same time?-->
+			<!--<input placeholder="Write your To-Do's here..." type="text" ng-model="createdList"/>-->
+			
 			<br/>
 			<input type="button" value="+ task"/>
 			<input type="submit" value="Save"/>
-			<input type="button" value="Completed"/>
-			<!--<input type="submit" value="submit"/>-->
 		
 	</form>
 
-	<div ng-repeat="list in ListStorage"><!--Pic in PhotoStorage-->
-	<!--<img src="{{Pic.url}}" />-->
-	<p>{{list.title}}</p> <!--Pic-->
+	<div ng-repeat="list in ListStorage">
+	<p>{{list.title}}</p> 
 	<p>{{list.toDos}}</p>
 
 	</div>
-
+	
+	<br/>
+	<br/>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
 
 </div>
