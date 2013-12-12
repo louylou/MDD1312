@@ -13,12 +13,17 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 			controller: 'addListCtrl' 
 		})
 		.when('/allLists', {
-		templateUrl: 'allLists.html',
-		controller:  'AllListsCtrl'	
+			templateUrl: 'allLists.html',
+			controller:  'AllListsCtrl'	
 		})
 		.when('/eachList', {
-		templateUrl: 'eachList.html',
-		controller:  'AllListsCtrl'	
+			templateUrl: 'eachList.html',
+			controller:  'AllListsCtrl'	 //EachListCtrl
+		})
+		//VVV not working?
+		.when('/userHomePg', {
+			templateUrl: 'userHomePg.html',
+			controller:  'AllListsCtrl'		
 		})
 
 }])

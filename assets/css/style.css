@@ -1,3 +1,8 @@
+/*
+Orange Color: #dba028
+Blue Color: #2e799f
+
+*/
 /*================ CSS ================ */
 
 body {
@@ -12,6 +17,9 @@ h1, h2, h4{
 
 p {
 text-indent: 20px;
+}
+span {
+color:#dba028;
 }
 
 .logoBanner{

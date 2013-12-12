@@ -2,16 +2,26 @@
 
 <div class="resultsBg">
 
+<form ng-submit="completedList()">
+
 	<div ng-repeat="list in ListStorage">
 		
 		<h4>Your '{{list.title}}' List:</h4>
 		
 		<ul class="eachItem">		 
-			<li><input type="checkbox" ng-model="createdList"/> {{list.toDos}}</li>	
+			<!--how do I make the checkbox = the list item it is next to?-->
+			<li><input type="checkbox" ng-model="completed"/> {{list.toDos}}</li>
+			<li>{{completed}}</li>	
 		</ul>
-	</div>
-	<input type="button" value="Completed"/>
 	
+		<!--change this to a button-->
+		<a ng-href="#/allLists">Back</a>
+		<input type="submit" value="Completed"/>
+	
+	</div>
+	
+</form>
+
 	<br/>
 	<br/>
 	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
