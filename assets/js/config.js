@@ -33,6 +33,11 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 			templateUrl: 'member.html',
 			controller:  'GlobalCtrl'		
 		})
+		.when('/contact', {
+			templateUrl: 'contact.html',
+			controller:  'GlobalCtrl'		
+		})
+		
 }])
 
 
