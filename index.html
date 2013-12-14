@@ -4,7 +4,7 @@
 <html data-ng-app="homeyApp"> <!-- 'ng-' stands for a built in angular directive-->
 
 <head>
-	<title> Homey Interior Design </title>
+	<title> Jot-It-Down </title>
 
 	 
 	 <!-- Firebase-->
@@ -19,6 +19,15 @@
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap-theme.min.css">
+
+
+
+	<!--@@@@@@@@JQUERY MIGHT HAVE TO DELETE@@@@@@@@@-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+
+
 
 	<!--AngularJS CDN-->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.min.js">
@@ -51,10 +60,8 @@
 			<a href="index.html"><img src="assets/images/logo.jpg"></a>
 		</div>
 		<div class="pgLinks">
-			<a href="login.html">Log In</a> ||
-			<a href="member.html">Become a Member</a> ||
-			<!--<a ng-href="#/detail"> Add Lists</a> ||-->
-			<!--<a ng-href="#/allLists"> Your Lists</a>-->
+			<a ng-href="#/login">Log In</a> ||
+			<a href="#/members">Become a Member</a> ||
 			
 			<!--This page should only be accessed once logged in-->
 			<a ng-href="#/userHomePg">User</a>

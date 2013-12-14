@@ -20,12 +20,19 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 			templateUrl: 'eachList.html',
 			controller:  'AllListsCtrl'	 //EachListCtrl
 		})
-		//VVV not working?
 		.when('/userHomePg', {
+			//authRequired: true,
 			templateUrl: 'userHomePg.html',
-			controller:  'AllListsCtrl'		
+			controller:  'AllListsCtrl' 		
 		})
-
+		.when('/login', {
+			templateUrl: 'login.html',
+			controller:  'loginCtrl'		
+		})
+		.when('/members', {
+			templateUrl: 'member.html',
+			controller:  'GlobalCtrl'		
+		})
 }])
 
 

@@ -58,23 +58,72 @@ color:#dba028;
 	text-decoration: none;
 }
 
-.button{
-font-family: tahoma, arial-narrow, arial;
-width: 100px;
-color: #ffffff;
-background-color:#dba028;
--moz-border-radius: 3px;
--webkit-border-radius:3px;
--khtml-border-radius: 3px;
-border-radius: 3px;
-}
-
 .eachItem li {
 list-style-type: none;
 }
 
+
+.userLinks {
+font-size: 130%;
+text-align: center;
+}
+
+
+
+.tag-input-ctn {
+border: 1px solid #ccc;
+padding: 2px 3px;
+display: inline-block;
+width: 400px;
+border-radius: 3px;
+box-shadow: insert 0px 1px 1px rgba(0,0,0,0.075);
+}
+
+.tag-input-ctn input {
+display:inline-block;
+float: left;
+height: 18px;
+padding: 0px;
+font-size: 12px;
+line-height: 18px;
+color: black;
+border: 0px;
+margin:2px;
+}
+
+.tag-input-ctn input:focus {
+outline:0;
+box-shadow: 0px;
+
+}
+
+.tag-input-ctn .input-tag {
+padding: 2px 4px;
+line-height: 12px;
+font-size: 11px;
+background-color: #e3eaf6;
+display: inline-block;
+float: left;
+border-radius: 2px;
+margin: 2px 5p 2px 0px;
+}
+
+.tag-input-ctn .input-tag .delete-tag {
+display: inline-block;
+font-size: 12px;
+cursor: pointer;
+padding: 0px 2px;
+}
+
+.tag-input-ctn .input-tag .delete-tag:hover {
+background-color: #96b4d2;
+}
+
+
+
 footer p {
-font-size: 10px;
+text-align: center;
+font-size: 70%;
 }
 
 
