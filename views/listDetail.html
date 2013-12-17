@@ -1,0 +1,25 @@
+<div class="resultsBg">
+	
+	<h4>Your '{{ListStorage[listId].title}}' List:</h4>
+		
+	<div class="list-group">
+	  <a ng-repeat="task in ListStorage[listId].toDos" ng-click="toggleTask($index)" class="list-group-item">{{task}}</a>
+	</div>
+
+
+	<form role="form" ng-submit="addTask()"> 
+		
+	
+	  <div class="form-group">
+		<label>Task:</label>
+		<input placeholder="New Task" class="form-control" type="text" ng-model="newTask"/>
+	</div>
+
+			<button type="submit" class="btn btn-default">Save</button>
+		
+	</form>
+	
+<!--"toDos": 	$scope.createdList-->
+	<button type="submit"><a ng-href="#/allLists">Back</a></button>
+
+</div>

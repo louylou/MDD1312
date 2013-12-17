@@ -39,10 +39,12 @@
 		<br/>	
 		<!--How do I create more input fields and save them all at the same time?-->
 		<!-- Should I add an 'id=""' inside my inputs to identify them?-->
-		<!--<input placeholder="" type="text" ng-model="createdList"/>-->
+		<!--<input placeholder="" type="text" ng-model="createdList2"/>-->
 		
 		<br/>
-		<input type="button" value="+ task"/>
+		
+		<button type="submit"><a ng-href="#" ng-click="task = task + 1">+ Task</a></button>
+		<!--<input type="button" value="+ task"/>-->
 		<input type="submit" value="Save"/>
 		
 	</form>

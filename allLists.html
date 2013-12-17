@@ -10,7 +10,7 @@
 		<h4>All Your Jot-It-Down Lists:</h4>
 	
 		<ul>
-			<li data-ng-repeat="searchTitles in ListStorage"><a ng-href="#/eachList"><!--| filter: search | orderBy: 'title'-->
+			<li data-ng-repeat="searchTitles in ListStorage"><a ng-href="#/list/{{searchTitles.title}}"><!--| filter: search | orderBy: 'title'-->
 			{{searchTitles.title}}
 			</a></li>
 		</ul>

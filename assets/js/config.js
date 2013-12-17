@@ -20,6 +20,10 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 			templateUrl: 'eachList.html',
 			controller:  'AllListsCtrl'	 //EachListCtrl
 		})
+		.when('/list/:listName', {
+			templateUrl: 'views/listDetail.html',
+			controller:  'ListDetail'	 //EachListCtrl
+		})
 		.when('/userHomePg', {
 			//authRequired: true,
 			templateUrl: 'userHomePg.html',

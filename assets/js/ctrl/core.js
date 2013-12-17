@@ -1,17 +1,21 @@
 <!-- core.js -->
 
 app.controller('GlobalCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
-
-        var url = 'https://homeystyle.firebaseio.com'; //link to my firebase account
+		
+		$scope.list;
+		
+        var url = 'https://jotitdownapp.firebaseio.com/'; //link to my firebase account
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
         $scope.addList = function() {
-        	
-        	var newList = {
-        		"title": 	$scope.listTitle, 
-				"toDos": 	$scope.createdList 
-        	}
-        	$scope.ListStorage.$add(newList); 
+        
+          	var newList = {
+         		"title": 	$scope.listTitle 
+ 				 
+         	}
+        	console.log($scope.ListStorage);
+        	//$scope.ListStorage.$add(newList);//is not scoped in this ctrl 
+
         }
         
 
@@ -20,7 +24,7 @@ app.controller('GlobalCtrl', ['$scope', '$firebase', function( $scope, $firebase
 //controller for detail.xxx
 app.controller('addListCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
 
-        var url = 'https://homeystyle.firebaseio.com'; 
+        var url = 'https://jotitdownapp.firebaseio.com/'; 
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
         $scope.addList = function() { 
@@ -29,7 +33,7 @@ app.controller('addListCtrl', ['$scope', '$firebase', function( $scope, $firebas
         		"title": 	$scope.listTitle, 
 				"toDos": 	$scope.createdList 
         	}
-        	$scope.ListStorage.$add(newList);	 
+        	$scope.ListStorage.$set(newList);	 
         }
         
         
@@ -101,7 +105,7 @@ app.directive('tagInput', function(){
 //controller for AllLists.html
 app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
 
-        var url = 'https://homeystyle.firebaseio.com'; 
+        var url = 'https://jotitdownapp.firebaseio.com/'; 
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
         $scope.addList = function() { 
@@ -114,6 +118,46 @@ app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $fireba
         }      
 
 }]);
+
+app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $scope, $firebase, $routeParams ){ 
+	
+	
+	var watcherVar = $scope.$watch('ListStorage', function(){
+			
+		var titleToMatch = $routeParams.listName;
+		
+		for (i in $scope.ListStorage) {
+			if ($scope.ListStorage[i].title == titleToMatch) {
+				//$scope.list = $scope.ListStorage[i];	
+				$scope.listId = i;	
+				watcherVar();
+			}
+		}
+		
+	});
+	
+
+	$scope.addTask = function(){
+		//$scope.list = $scope.ListStorage[$scope.listId];
+		
+		console.log('am i here?', $scope.ListStorage[$scope.listId].toDos);
+		if($scope.ListStorage[$scope.listId].toDos == undefined){
+			$scope.ListStorage[$scope.listId].toDos = [];
+		}
+		
+		$scope.ListStorage[$scope.listId].toDos.push($scope.newTask);
+		console.log($scope.ListStorage[$scope.listId].toDos);
+		$scope.newTask = "";
+	}
+	
+	$scope.toggleTask = function(taskId) {
+		
+		delete $scope.ListStorage[$scope.listId].toDos[taskId];
+		$scope.ListStorage.$save();
+	}
+
+}]);
+
 
 //controller for eachList.html
 /*
@@ -148,7 +192,7 @@ app.controller('EachListCtrl', ['$scope', '$firebase', function( $scope, $fireba
 
 app.controller('loginCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
 
-        var url = 'https://homeystyle.firebaseio.com'; //link to my firebase account
+        var url = 'https://jotitdown.firebaseio.com/'; //link to my firebase account
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
         $scope.username = null;
