@@ -6,7 +6,7 @@
 		
 		
 		<h4>Welcome!</h4><p>Jot-It-Down is a great app for writing down your own personal
-		"to-do" lists. Once a <a href="member.html">member</a> you can store all your lists, and view them 
+		"to-do" lists. Once a <a ng-href="#/members">member</a> you can store all your lists, and view them 
 		individually by their titles. Writing a "to-do" list mentally helps one feel more accomplished 
 		when checking off their everyday or random tasks they have to do. So why not use Jot-It-Down app to go 
 		wherever you go on your quest to attaining your tasks! <b>Enjoy!</b></p>
@@ -14,9 +14,7 @@
 	<br/>
 	<br/>
 	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
-	
-	
-	
+		
 </div>
 		
 

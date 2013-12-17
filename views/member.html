@@ -1,42 +1,28 @@
 <!--Sign up to become a member page-->
   
-	<div class="resultsBg">
-		<div class="login">
-			<p>Please fill out all fields to become a member.</p>
+<div class="resultsBg">
 		
-			<form method="post" action="index.html">
-				<p><input type="text" name="firstname" value="" placeholder="First Name"></p>
-				<p><input type="text" name="lastname" value="" placeholder="Last Name"></p>
-				<p><input type="text" name="login" value="" placeholder="Username"></p>
-				<p><input type="password" name="password" value="" placeholder="Password"></p>
-				<p><input type="text" name="email" value="" placeholder="email"></p>
-				<p class="submit"><input type="submit" name="commit" value="Join!"></p>
-			</form>
-		</div><!--login-->
+	<h4>Please fill out all fields to become a member.</h3>
+
+	<form ng-submit="">	
+		<div class="form-group"> <!--or  class="input-group"?-->
+			<input type="text" class="form-control" placeholder="First Name">
 		
-		<div class="input-group">
-			<span class="input-group-addon">First</span>
-			<input type="text" class="form-control" placeholder="">
+			<input type="text" class="form-control" placeholder="Last Name">
+		
+			<input type="text" class="form-control" placeholder="Username">
+		
+			<input type="text" class="form-control" placeholder="Password">
+		
+			<input type="text" class="form-control" placeholder="Email">
 		</div>
-		<div class="input-group">
-			<span class="input-group-addon">Last</span>
-			<input type="text" class="form-control" placeholder="">
-		</div>
-		<div class="input-group">
-			<span class="input-group-addon">User</span>
-			<input type="text" class="form-control" placeholder="">
-		</div>
-		<div class="input-group">
-			<span class="input-group-addon">Pass</span>
-			<input type="text" class="form-control" placeholder="">
-		</div>
-		<div class="input-group">
-			<span class="input-group-addon">Email</span>
-			<input type="text" class="form-control" placeholder="">
-		</div>
+		
+		
+		<button type="submit" class="btn btn-default">Join</button>
+	</form>
 		
 	<br/>
 	<br/>
 	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
 	
-	</div><!--resultsBg-->	
+</div><!--resultsBg-->	

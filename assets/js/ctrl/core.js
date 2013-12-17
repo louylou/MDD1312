@@ -15,10 +15,7 @@ app.controller('GlobalCtrl', ['$scope', '$firebase', function( $scope, $firebase
          	}
         	console.log($scope.ListStorage);
         	//$scope.ListStorage.$add(newList);//is not scoped in this ctrl 
-
         }
-        
-
 }]);
 
 //controller for detail.xxx

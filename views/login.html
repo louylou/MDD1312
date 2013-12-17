@@ -1,22 +1,25 @@
 <!--Login in page-->
 
 
-	<div class="resultsBg">
-		<div class="login">
-			<h4>Login:</h4>
+<div class="resultsBg">
 		
-			<form method="post" action="index.html">
-				<p><input type="text" placeholder="Username" name="login" ng-model="username"></p>
-				<p><input type="password" placeholder="Password" name="password" ng-model="password"></p>
-				
-				<button ng-click="login()" ng-hide="createMode">Log In</button>
-				
-				<!--<p class="submit"><input type="submit" name="commit" value="Login">-->
-				<button type="submit"><a href="member.html">Become a Member</a></button>
-			</form>
-		</div><!--login-->
+	<h4>Login:</h4>
+		
+	<form ng-submit="">	
+		<div class="form-group"><!-- or class="input-group"?-->
+			
+			<input type="text" class="form-control" placeholder="Username">
+
+			<input type="text" class="form-control" placeholder="Password">
+
+		</div>
+	
+		<button type="submit" class="btn btn-default">Login</button>
+		
+	</form>
+	
 	<br/>
 	<br/>
 	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
 
-	</div><!--resultsBg-->	
+</div><!--resultsBg-->	
