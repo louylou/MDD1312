@@ -4,8 +4,7 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 .config(['$routeProvider',function(r){
 
 	r
-		.when('/',{
-			//controller: 
+		.when('/',{ 
 			templateUrl : 'views/main.xxx',
 		})
 		.when('/detail', {
@@ -13,32 +12,27 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 			controller: 'addListCtrl' 
 		})
 		.when('/allLists', {
-			templateUrl: 'allLists.html',
+			templateUrl: 'views/allLists.html',
 			controller:  'AllListsCtrl'	
-		})
-		.when('/eachList', {
-			templateUrl: 'eachList.html',
-			controller:  'AllListsCtrl'	 //EachListCtrl
 		})
 		.when('/list/:listName', {
 			templateUrl: 'views/listDetail.html',
-			controller:  'ListDetail'	 //EachListCtrl
-		})
-		.when('/userHomePg', {
-			//authRequired: true,
-			templateUrl: 'userHomePg.html',
-			controller:  'AllListsCtrl' 		
+			controller:  'ListDetail'	 
 		})
 		.when('/login', {
-			templateUrl: 'login.html',
+			templateUrl: 'views/login.html',
 			controller:  'loginCtrl'		
 		})
 		.when('/members', {
-			templateUrl: 'member.html',
+			templateUrl: 'views/member.html',
 			controller:  'GlobalCtrl'		
 		})
 		.when('/contact', {
-			templateUrl: 'contact.html',
+			templateUrl: 'views/contact.html',
+			controller:  'GlobalCtrl'		
+		})
+		.when('/terms', {
+			templateUrl: 'views/terms.html',
 			controller:  'GlobalCtrl'		
 		})
 		

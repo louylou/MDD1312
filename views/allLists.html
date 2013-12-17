@@ -1,0 +1,44 @@
+
+<div class="resultsBg">	
+		
+		
+	<h4>Create a Title for Your New List:</h4>
+	
+	<ul>
+		<li>Make it-- short and descriptive.</li>
+		<li>To be-- easier to remember and find.</li>
+		<li>Once created-- click it and add tasks!</li>
+	</ul>
+			
+
+	<form role="form" ng-submit="titleList()"> 
+		
+		<div class="form-group">
+			<label>New List Title:</label>
+			<input placeholder="Title of Your New List" class="form-control" type="text" ng-model="newTitle"/>		  	
+		</div>
+		  
+		<button type="submit" class="btn btn-default">Save</button>
+				
+	</form>
+				
+
+	<h4>All Your Lists:</h4>
+	
+	<div class="list-group">
+	  <a ng-repeat="searchTitles in ListStorage" ng-href="#/list/{{searchTitles.title}}" class="list-group-item">{{searchTitles.title}}</a>
+	</div>
+	
+	<!--<div class="list-group">
+	  <a ng-repeat="task in ListStorage[listId].toDos" class="list-group-item">{{task}}</a>
+	</div>-->
+	
+	<!--<div class="list-group">
+	  <a ng-repeat="searchTitles in ListStorage" ng-href="#/list/{{searchTitles.title}}" class="list-group-item">{{searchTitles.title}}</a>
+	</div>-->
+			
+	<br/>
+	<br/>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
+		
+</div>

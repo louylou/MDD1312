@@ -13,7 +13,7 @@
 		
 	<br/>
 	<br/>
-	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
 	
 	
 	

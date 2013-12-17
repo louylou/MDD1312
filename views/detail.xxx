@@ -10,24 +10,8 @@
 		<li>Easier to remember and find.</li>
 		<li>Review lists and check off tasks!</li>
 	</ul>
+
 	
-	
-	<!--NEW CODE HERE VVVVVVV-->	
-	<div class="tag-input-ctn"> 
-	
-		<div data-ng-repear="(key, tag) in inputTags" class="input-tag">
-			{{ tag.name }}
-			<div class="detele-tag" data-ng-click="deleteTag(key)">&times;</div><!--deletes each tag-->
-		</div>
-	 	<!--data-tag-input is a directive-->
-	 	<input type="text" data-tag-input="" data-ng-model="tagText" data-ng-style="{width:inputWidth}" 
-	 	data-new-tag="addTag()" data-delete-tag="deleteTag()"/>
-	
-	</div>	
-	<!--NEW CODE HERE ^^^^^^^-->
-	
-	
-	<br/>
 	<form ng-submit="addList()"> 
 	
 		<span>Title: <input type="text" ng-model="listTitle"/>
@@ -37,14 +21,10 @@
 		<span>Task: <input type="text" ng-model="createdList"/>
 		</span>
 		<br/>	
-		<!--How do I create more input fields and save them all at the same time?-->
-		<!-- Should I add an 'id=""' inside my inputs to identify them?-->
-		<!--<input placeholder="" type="text" ng-model="createdList2"/>-->
-		
+	
 		<br/>
 		
 		<button type="submit"><a ng-href="#" ng-click="task = task + 1">+ Task</a></button>
-		<!--<input type="button" value="+ task"/>-->
 		<input type="submit" value="Save"/>
 		
 	</form>
@@ -57,6 +37,6 @@
 	
 	<br/>
 	<br/>
-	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a href="terms.html"> Terms</a> </p></footer>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
 
 </div>

@@ -1,6 +1,8 @@
 <div class="resultsBg">
 	
 	<h4>Your '{{ListStorage[listId].title}}' List:</h4>
+	
+	<p>Click on task to complete.</p>
 		
 	<div class="list-group">
 	  <a ng-repeat="task in ListStorage[listId].toDos" ng-click="toggleTask($index)" class="list-group-item">{{task}}</a>
@@ -16,10 +18,17 @@
 	</div>
 
 			<button type="submit" class="btn btn-default">Save</button>
-		
 	</form>
 	
-<!--"toDos": 	$scope.createdList-->
-	<button type="submit"><a ng-href="#/allLists">Back</a></button>
+	
+	<!--not working?-->
+	<div class="btn-group">
+		<button type="button" ng-href="#/allLists" class="btn btn-default">Back</button>	
+	</div>
+	<!--<button type="submit"><a ng-href="#/allLists">Back</a></button>-->
+	
+	<br/>
+	<br/>
+	<footer><p>Jot-It-Down &copy; | MDD1312 | Lea DiGiannurio |<a ng-href="#/terms"> Terms</a> </p></footer>
 
 </div>
