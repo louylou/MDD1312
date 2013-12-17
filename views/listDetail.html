@@ -4,7 +4,7 @@
 	
 	<h4>Your '{{ListStorage[listId].title}}' List:</h4>
 	
-	<p>Click on task to complete.</p>
+	<span>Click on a task to complete it.</span>
 		
 	<div class="list-group">
 	  <a ng-repeat="task in ListStorage[listId].toDos" ng-click="toggleTask($index)" class="list-group-item">{{task}}</a>
@@ -23,10 +23,11 @@
 	
 	
 	<!--not working?-->
-	<div class="btn-group">
+	<div class="btn-group btn-group-sm">
 		<button type="button" ng-href="#/allLists" class="btn btn-default">Back</button>	
+
+		<button type="submit" class="btn btn-default">Delete whole list</button>
 	</div>
-	<!--<button type="submit"><a ng-href="#/allLists">Back</a></button>-->
 	
 	<br/>
 	<br/>

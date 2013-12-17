@@ -10,57 +10,25 @@ app.controller('GlobalCtrl', ['$scope', '$firebase', function( $scope, $firebase
         $scope.addList = function() {
         
           	var newList = {
-         		"title": 	$scope.listTitle 
- 				 
+         		"title": 	$scope.listTitle  				 
          	}
-        	console.log($scope.ListStorage);
-        	//$scope.ListStorage.$add(newList);//is not scoped in this ctrl 
         }
 }]);
 
 //controller for AllLists.html
 app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
-
-	var watcherVar = $scope.$watch('ListStorage', function(){
-			
-		var titleToMatch = $routeParams.listName;
-		
-		for (i in $scope.ListStorage) {
-			if ($scope.ListStorage[i].title == titleToMatch) {	
-				$scope.listId = i;	
-				watcherVar();
-			}
-		}
-		
-	});
-
-	$scope.titleList = function(){
-		
-		
-		if($scope.ListStorage[$scope.listId].title == undefined){
-			$scope.ListStorage[$scope.listId].title = [];
-		}
-		
-		$scope.ListStorage[$scope.listId].title.push($scope.newTitle);			
-		$scope.newTitle = "";
-	}
 	
-	
-	
-	/*
         var url = 'https://jotitdownapp.firebaseio.com/'; 
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
         $scope.titleList = function() { 
 
-        	var newList = { 
-        		"title": 	$scope.listTitle, 
-				"toDos": 	$scope.createdList
+        	var newListTitle = { 
+        		"title": 	$scope.newTitle 
         	}
-        	$scope.ListStorage.$add(newTitle); 
-        } 
-    */     
-
+        	$scope.ListStorage.$add(newListTitle);
+        	$scope.newTitle = '';  
+        }     
 }]);
 
 app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $scope, $firebase, $routeParams ){ 
@@ -71,28 +39,20 @@ app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $
 		var titleToMatch = $routeParams.listName;
 		
 		for (i in $scope.ListStorage) {
-			if ($scope.ListStorage[i].title == titleToMatch) {
-				//$scope.list = $scope.ListStorage[i];	
+			if ($scope.ListStorage[i].title == titleToMatch) {	
 				$scope.listId = i;	
 				watcherVar();
 			}
-		}
-		
+		}		
 	});
 
 	$scope.addTask = function(){
-		//$scope.list = $scope.ListStorage[$scope.listId];
-		
-		//console.log('am i here?', $scope.ListStorage[$scope.listId].toDos);
 		
 		if($scope.ListStorage[$scope.listId].toDos == undefined){
 			$scope.ListStorage[$scope.listId].toDos = [];
 		}
 		
 		$scope.ListStorage[$scope.listId].toDos.push($scope.newTask);
-		
-		//console.log($scope.ListStorage[$scope.listId].toDos);
-		
 		$scope.newTask = "";
 	}
 	
@@ -105,10 +65,32 @@ app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $
 
 }]);
 
+app.controller('MembersCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
+
+        var url = 'https://jotitdownapp.firebaseio.com/'; //link to my firebase account
+        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
+        
+       // $scope.username = null;
+       // $scope.password = null;
+        
+        $scope.membership = function() {
+        	
+        	var newMember = {
+        		"newFName": 	$scope.fName,
+        		"newLName": 	$scope.lName,
+        		"newUsername": 	$scope.newUser,
+        		"newPassword": 	$scope.newPass,
+        		"newEmail": 	$scope.email 		 
+        	}
+        	$scope.ListStorage.$add(newMember); 
+        }
+        
+
+}]);
 
 app.controller('loginCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
 
-        var url = 'https://jotitdown.firebaseio.com/'; //link to my firebase account
+        var url = 'https://jotitdownapp.firebaseio.com/'; //link to my firebase account
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
         
         $scope.username = null;
@@ -117,8 +99,8 @@ app.controller('loginCtrl', ['$scope', '$firebase', function( $scope, $firebase 
         $scope.login = function() {
         	
         	var user = {
-        		"title": 	$scope.listTitle, 
-				"toDos": 	$scope.createdList 
+        		"username": 	$scope.user, 
+				"password": 	$scope.pass 
         	}
         	$scope.ListStorage.$add(user); 
         }

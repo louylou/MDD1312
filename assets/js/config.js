@@ -21,7 +21,7 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 		})
 		.when('/members', {
 			templateUrl: 'views/member.html',
-			controller:  'GlobalCtrl'		
+			controller:  'MembersCtrl'		
 		})
 		.when('/contact', {
 			templateUrl: 'views/contact.html',

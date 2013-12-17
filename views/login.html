@@ -5,12 +5,12 @@
 		
 	<h4>Login:</h4>
 		
-	<form ng-submit="">	
+	<form ng-submit="login()">	
 		<div class="form-group"><!-- or class="input-group"?-->
 			
-			<input type="text" class="form-control" placeholder="Username">
+			<input type="text" class="form-control" placeholder="Username" ng-model="user"/>
 
-			<input type="text" class="form-control" placeholder="Password">
+			<input type="password" class="form-control" placeholder="Password" ng-model="pass"/>
 
 		</div>
 	

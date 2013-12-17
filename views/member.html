@@ -4,17 +4,17 @@
 		
 	<h4>Please fill out all fields to become a member.</h3>
 
-	<form ng-submit="">	
+	<form  role="form" ng-submit="membership()">	
 		<div class="form-group"> <!--or  class="input-group"?-->
-			<input type="text" class="form-control" placeholder="First Name">
+			<input type="text" class="form-control" placeholder="First Name" ng-model="fName"/>
 		
-			<input type="text" class="form-control" placeholder="Last Name">
+			<input type="text" class="form-control" placeholder="Last Name" ng-model="lName"/>
 		
-			<input type="text" class="form-control" placeholder="Username">
+			<input type="text" class="form-control" placeholder="Username" ng-model="newUser"/>
 		
-			<input type="text" class="form-control" placeholder="Password">
+			<input type="password" class="form-control" placeholder="Password" ng-model="newPass"/>
 		
-			<input type="text" class="form-control" placeholder="Email">
+			<input type="text" class="form-control" placeholder="Email" ng-model="email"/>
 		</div>
 		
 		

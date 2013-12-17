@@ -14,8 +14,8 @@
 	<form role="form" ng-submit="titleList()"> 
 		
 		<div class="form-group">
-			<label>New List Title:</label>
-			<input placeholder="Title of Your New List" class="form-control" type="text" ng-model="newTitle"/>		  	
+			<label>Title:</label>
+			<input placeholder="Title for Your New List" class="form-control" type="text" ng-model="newTitle"/>		  	
 		</div>
 		  
 		<button type="submit" class="btn btn-default">Save</button>
@@ -24,18 +24,11 @@
 				
 
 	<h4>All Your Lists:</h4>
-	
+  	
 	<div class="list-group">
 	  <a ng-repeat="searchTitles in ListStorage" ng-href="#/list/{{searchTitles.title}}" class="list-group-item">{{searchTitles.title}}</a>
 	</div>
 	
-	<!--<div class="list-group">
-	  <a ng-repeat="task in ListStorage[listId].toDos" class="list-group-item">{{task}}</a>
-	</div>-->
-	
-	<!--<div class="list-group">
-	  <a ng-repeat="searchTitles in ListStorage" ng-href="#/list/{{searchTitles.title}}" class="list-group-item">{{searchTitles.title}}</a>
-	</div>-->
 			
 	<br/>
 	<br/>
