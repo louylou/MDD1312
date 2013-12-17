@@ -7,10 +7,6 @@ var app = angular.module('homeyApp', ['ngRoute','firebase'])
 		.when('/',{ 
 			templateUrl : 'views/main.xxx',
 		})
-		.when('/detail', {
-			templateUrl : 'views/detail.xxx',
-			controller: 'addListCtrl' 
-		})
 		.when('/allLists', {
 			templateUrl: 'views/allLists.html',
 			controller:  'AllListsCtrl'	

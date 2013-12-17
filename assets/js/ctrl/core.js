@@ -18,23 +18,6 @@ app.controller('GlobalCtrl', ['$scope', '$firebase', function( $scope, $firebase
         }
 }]);
 
-//controller for detail.xxx
-app.controller('addListCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
-
-        var url = 'https://jotitdownapp.firebaseio.com/'; 
-        var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
-        
-        $scope.addList = function() { 
-        	
-        	var newList = { 
-        		"title": 	$scope.listTitle, 
-				"toDos": 	$scope.createdList 
-        	}
-        	$scope.ListStorage.$set(newList);	 
-        }        
-}]);
-
-
 //controller for AllLists.html
 app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $firebase ){ 
 
