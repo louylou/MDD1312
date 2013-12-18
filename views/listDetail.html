@@ -4,7 +4,9 @@
 	
 	<h4>Your '{{ListStorage[listId].title}}' List:</h4>
 	
+	
 	<span>Click on a task to complete it.</span>
+	
 		
 	<div class="list-group">
 	  <a ng-repeat="task in ListStorage[listId].toDos" ng-click="toggleTask($index)" class="list-group-item">{{task}}</a>
