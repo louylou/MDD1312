@@ -18,16 +18,13 @@
 			<input placeholder="New Task" class="form-control" type="text" ng-model="newTask"/>
 		</div>
 
-		<button type="submit" class="btn btn-default">Save</button>
+		<button type="submit" class="btn btn-default">Add</button>
 	</form>
 	
-	
-	<!--not working?-->
-	<div class="btn-group btn-group-sm">
-		<button type="button" ng-href="#/allLists" class="btn btn-default">Back</button>	
+	<a ng-href="#/allLists" class="btn btn-default btn-sm" role="button">Back</a>	
+		
+	<button type="submit" ng-click="deleteList()" class="btn btn-default btn-sm">Delete whole list</button>
 
-		<button type="submit" class="btn btn-default">Delete whole list</button>
-	</div>
 	
 	<br/>
 	<br/>

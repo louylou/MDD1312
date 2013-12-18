@@ -62,6 +62,16 @@ app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $
 		delete $scope.ListStorage[$scope.listId].toDos[taskId];
 		$scope.ListStorage.$save();
 	}
+	
+	//delete whole list function
+	$scope.deleteList = function() {
+		delete $scope.ListStorage[listId].parent(title);
+		delete $scope.ListStorage[listId].parent(toDos);
+		
+		$scope.ListStorage.$save();	
+	
+	}
+
 
 }]);
 
@@ -104,6 +114,31 @@ app.controller('loginCtrl', ['$scope', '$firebase', function( $scope, $firebase 
         	}
         	$scope.ListStorage.$add(user); 
         }
+        
+/*
+	// instatiate the FirebaseSimpleLogin and monitor the user's auth state
+	var chatRef = new Firebase('https://jotitdownapp.firebaseio.com/');
+	var auth = new FirebaseSimpleLogin(chatRef, function(error, user) {
+	  if (error) {
+		// an error occurred while attempting login
+		alert(error);
+	  } else if (user) {
+		// user authenticated with Firebase
+		alert('User ID: ' + user.id + ', Provider: ' + user.provider);
+	  } else {
+		// user is logged out
+	  }
+	});
+
+	// attempt to log the user in with your preferred authentication provider
+	auth.login('<provider>'); //make it facebook
+	
+	
+	
+	
+	auth.login('facebook');
+	
+*/
         
 
 }]);
