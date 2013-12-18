@@ -31,7 +31,7 @@ app.controller('AllListsCtrl', ['$scope', '$firebase', function( $scope, $fireba
         }     
 }]);
 
-app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $scope, $firebase, $routeParams ){ 
+app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', '$location', function( $scope, $firebase, $routeParams, $location ){ 
 	
 	
 	var watcherVar = $scope.$watch('ListStorage', function(){
@@ -65,14 +65,12 @@ app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', function( $
 	
 	//delete whole list function
 	$scope.deleteList = function() {
-		delete $scope.ListStorage[listId].parent(title);
-		delete $scope.ListStorage[listId].parent(toDos);
+			
+		$scope.ListStorage.$remove($scope.listId);
 		
-		$scope.ListStorage.$save();	
-	
+		//once items deleted will send the user back to 'all Lists' page
+		$location.path('/allLists');	
 	}
-
-
 }]);
 
 app.controller('MembersCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
@@ -109,8 +107,8 @@ app.controller('loginCtrl', ['$scope', '$firebase', function( $scope, $firebase 
         $scope.login = function() {
         	
         	var user = {
-        		"username": 	$scope.user, 
-				"password": 	$scope.pass 
+        		"username": $scope.user, 
+				"password": $scope.pass 
         	}
         	$scope.ListStorage.$add(user); 
         }
@@ -136,7 +134,12 @@ app.controller('loginCtrl', ['$scope', '$firebase', function( $scope, $firebase 
 	
 	
 	
-	auth.login('facebook');
+	auth.login('facebook', {
+	  //access_token: ,
+	  rememberMe: true,
+	  scope: 'email,user_likes'
+	});
+
 	
 */
         
