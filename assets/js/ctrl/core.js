@@ -68,7 +68,7 @@ app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', '$location'
 	$scope.deleteList = function() {
 			
 		$scope.ListStorage.$remove($scope.listId);
-		//$scope.ListStorage.$save(); //idk if this is needed
+		
 		
 		//once items deleted will send the user back to 'all Lists' page
 		$location.path('/allLists');	
@@ -76,13 +76,17 @@ app.controller('ListDetail', ['$scope', '$firebase', '$routeParams', '$location'
 }]);
 
 
+
+/*
+The login properly adds to firebase but I wasn't sure how to search/match username to log in.
+Once the "join" button is clicked, user is sent to list page Where an extra list box is shown 
+under the other lists; this is because it is the user & password stored in firebase.
+*/
+
 app.controller('loginCtrl', ['$scope', '$firebase', '$location', function( $scope, $firebase, $location ){
 
-        var url = 'https://mymddapp.firebaseio.com/'; //link to my firebase account
+        var url = 'https://mymddapp.firebaseio.com/'; 
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
-        
-        $scope.username = null;
-        $scope.password = null;
         
         $scope.login = function() {
         	
@@ -90,19 +94,20 @@ app.controller('loginCtrl', ['$scope', '$firebase', '$location', function( $scop
         		"username": $scope.user, 
 				"password": $scope.pass 
         	}
-        	$scope.ListStorage.$add(user); 
+        	$scope.ListStorage.$add(user);
+        	$scope.user='';
+        	$scope.pass='';
+        	$location.path('/allLists');
+        	 
         }
 
 
 }]);
 
-app.controller('MembersCtrl', ['$scope', '$firebase', function( $scope, $firebase ){
+app.controller('MembersCtrl', ['$scope', '$firebase','$location', function( $scope, $firebase, $location ){
 
         var url = 'https://mymddapp.firebaseio.com/'; 
         var sync = $firebase(new Firebase(url)).$bind($scope, 'ListStorage'); 
-        
-       // $scope.username = null;
-       // $scope.password = null;
         
         $scope.membership = function() {
         	
@@ -113,7 +118,13 @@ app.controller('MembersCtrl', ['$scope', '$firebase', function( $scope, $firebas
         		"newPassword": 	$scope.newPass,
         		"newEmail": 	$scope.email 		 
         	}
-        	$scope.ListStorage.$add(newMember); 
+        	$scope.ListStorage.$add(newMember);
+        	$scope.fName='';
+        	$scope.lName='';
+        	$scope.newUser='';
+        	$scope.newPass='';
+        	$scope.email='';
+        	$location.path('/allLists');
         }
 }]);
 
